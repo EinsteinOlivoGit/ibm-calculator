@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 class ResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Map<String, String> args = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
@@ -21,17 +23,19 @@ class ResultsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      'OVERWEIGHT',
-                      style: KResultTextStyle,
+                      args['resultText'],
+                      style: args['resultText'] == 'Normal'
+                          ? KResultNormalTextStyle
+                          : KResultTextStyle,
                     ),
                     Text(
-                      '26.7',
+                      args['bmiResult'],
                       style: kNumberResultTextStyle,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Text(
-                        'You have a higher than normal body weight. Try exercise more.',
+                        args['interpretation'],
                         textAlign: TextAlign.center,
                         style: kBodyTextStyle,
                       ),

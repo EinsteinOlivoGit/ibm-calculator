@@ -1,3 +1,4 @@
+import 'package:calculator_ibm/calculator_brain.dart';
 import 'package:calculator_ibm/components/bottom_button.dart';
 import 'package:calculator_ibm/components/icon_content.dart';
 import 'package:calculator_ibm/components/reusable_card.dart';
@@ -155,7 +156,16 @@ class _InputPageState extends State<InputPage> {
           ),
           BottomButton(
             buttonTitle: 'CALCULATE',
-            onTap: () => Navigator.pushNamed(context, '/results'),
+            onTap: () {
+              CalculatorBrain calculator =
+                  CalculatorBrain(height: height, weight: weight);
+              Navigator.pushNamed(context, '/results',
+                  arguments: <String, String>{
+                    'bmiResult': calculator.calcualteBMI(),
+                    'resultText': calculator.getResult(),
+                    'interpretation': calculator.getInterpretation()
+                  });
+            },
           ),
         ],
       ),

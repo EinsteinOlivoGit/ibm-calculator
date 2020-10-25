@@ -24,7 +24,12 @@ const kLargeButtonTextStyle = TextStyle(
 
 const KResultTextStyle = TextStyle(
   color: Color(0xFFFE5C5C),
-  fontSize: 20.0,
+  fontSize: 26.0,
+);
+
+const KResultNormalTextStyle = TextStyle(
+  color: Color(0xFF007C00),
+  fontSize: 26.0,
 );
 
 const kBodyTextStyle = TextStyle(
