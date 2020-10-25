@@ -1,3 +1,5 @@
+import 'package:calculator_ibm/constants.dart';
+import 'package:calculator_ibm/results_page.dart';
 import 'package:flutter/material.dart';
 
 import 'input_page.dart';
@@ -13,8 +15,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFFdce1eb),
         scaffoldBackgroundColor: Color(0xFFdce1eb),
+        accentColor: kPrincipalColor,
       ),
-      home: InputPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => InputPage(),
+        '/results': (context) => ResultsPage(),
+      },
     );
   }
 }
