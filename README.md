@@ -1,3 +1,3 @@
-# ibm_calculator
+# bmi_calculator
 
-ibm calculator
+bmi calculator
