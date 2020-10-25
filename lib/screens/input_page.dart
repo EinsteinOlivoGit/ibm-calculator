@@ -1,11 +1,11 @@
+import 'package:calculator_ibm/components/bottom_button.dart';
+import 'package:calculator_ibm/components/icon_content.dart';
+import 'package:calculator_ibm/components/reusable_card.dart';
+import 'package:calculator_ibm/components/value_card.dart';
+import 'package:calculator_ibm/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'constants.dart';
-import 'icon_content.dart';
-import 'reusable_card.dart';
-import 'value_card.dart';
 
 enum EnumGender {
   Male,
@@ -27,7 +27,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('BMI CALCULATOR')),
+        title: Text('BMI CALCULATOR'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -153,18 +153,9 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
+          BottomButton(
+            buttonTitle: 'CALCULATE',
             onTap: () => Navigator.pushNamed(context, '/results'),
-            child: Container(
-              alignment: Alignment.center,
-              child: Text(
-                'CALCULATE',
-                style: kLargeButtonTextStyle,
-              ),
-              color: kPrincipalColor,
-              width: double.infinity,
-              height: 70.0,
-            ),
           ),
         ],
       ),
